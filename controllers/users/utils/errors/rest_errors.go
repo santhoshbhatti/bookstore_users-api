@@ -19,3 +19,14 @@ func NewBadRequest(message string) *RestErr {
 
 	return &restErr
 }
+
+/*NewNotFoundError This is the reusable Not found request */
+func NewNotFoundError(message string) *RestErr {
+	restErr := RestErr{
+		Message: message,
+		Status:  http.StatusNotFound,
+		Error:   "not_found",
+	}
+
+	return &restErr
+}
